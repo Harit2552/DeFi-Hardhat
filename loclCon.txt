@@ -1,0 +1,46 @@
+PS C:\Users\DELL\Desktop\Harit\Blockchain\Third Year\Semester 5\HardHat> npx hardhat console --network localhost
+>>
+[dotenv@17.2.3] injecting env (4) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[dotenv@17.2.3] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Welcome to Node.js v22.18.0.
+Type ".help" for more information.
+> const lendingPoolAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+undefined
+> const LendingPool = await ethers.getContractFactory("LendingPool");
+undefined
+> const lendingPool = await LendingPool.attach(lendingPoolAddress);
+undefined
+> const borrowingPoolAddress = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6";
+undefined
+> const BorrowingPool = await ethers.getContractFactory("BorrowingPool");
+'undefined
+> const borrowingPool = await BorrowingPool.attach(borrowingPoolAddress);
+undefined
+> const [owner] = await ethers.getSigners();
+undefined
+> await lendingPool.connect(owner).setBorrowingPool(borrowingPoolAddress);
+{
+  hash: '0x36b279f57dcbaec22e2bd811c1df99658befb1e6dcff125700368184bfc82cca',
+  type: 2,
+  accessList: [],
+  blockHash: '0x53188593ade559adc69ce4f69e32a474aef6784305dc3a9a944eff19131b48c9',
+  blockNumber: 10,
+  transactionIndex: 0,
+  confirmations: 1,
+  from: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+  gasPrice: BigNumber { value: "294235348" },
+  maxPriorityFeePerGas: BigNumber { value: "0" },
+  maxFeePerGas: BigNumber { value: "372391612" },
+  gasLimit: BigNumber { value: "46222" },
+  to: '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707',
+  value: BigNumber { value: "0" },
+  nonce: 9,
+  data: '0x0f67f71b0000000000000000000000002279b7a0a67db372996a5fab50d91eaa73d2ebe6',
+  r: '0xcf22ed80f876d00fa28a57ea9d5a365cd7230988b84475a247c941e4aca7eb7a',
+  s: '0x61b5bf8546720e48f9cc30c7ac8795a8e011851f65d7509442e1bfa3bbd50951',
+  v: 0,
+  creates: null,
+  chainId: 31337,
+  wait: [Function (anonymous)]
+}
+>
